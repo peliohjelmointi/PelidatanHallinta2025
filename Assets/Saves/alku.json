@@ -1,0 +1,30 @@
+{
+  "playerPosition": {
+    "x": 1.71379864,
+    "y": 1,
+    "z": -1.51867747,
+    "normalized": {
+      "x": 0.7239863,
+      "y": 0.253469557,
+      "z": -0.6415583,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "magnitude": 2.36716986,
+    "sqrMagnitude": 5.60349369
+  },
+  "playerRotation": {
+    "x": 0.0,
+    "y": 90.40001,
+    "z": 0.0,
+    "normalized": {
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "magnitude": 90.40001,
+    "sqrMagnitude": 8172.16162
+  }
+}

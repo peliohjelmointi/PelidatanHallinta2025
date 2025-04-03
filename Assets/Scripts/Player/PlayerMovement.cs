@@ -1,4 +1,7 @@
+using JetBrains.Annotations;
 using UnityEngine;
+using Newtonsoft.Json;
+
 
 namespace KS
 {
@@ -13,7 +16,7 @@ namespace KS
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
-            capsuleCollider = GetComponent<CapsuleCollider>();                           
+            capsuleCollider = GetComponent<CapsuleCollider>();
         }
 
         private void Start()
@@ -45,7 +48,7 @@ namespace KS
         }
 
         public void LoadGameData(GameData data)
-        {       
+        {
             transform.position = data.playerPosition;
             transform.eulerAngles = data.playerRotation;
 
@@ -53,7 +56,7 @@ namespace KS
         }
 
         public void SaveGameData(GameData data)
-        {
+        {             
             data.playerPosition = transform.position;
             data.playerRotation = transform.eulerAngles;
         }

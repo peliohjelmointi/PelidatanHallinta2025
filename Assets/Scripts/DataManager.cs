@@ -8,7 +8,7 @@ public class DataManager : MonoBehaviour
 
     List<ISaveable> saveableObjects;
 
-    public PlayerPositionSO playerStartPositionSO;
+    //public PlayerPositionSO playerStartPositionSO;
 
     [Header("Save/Load file name")]
     [SerializeField]
@@ -25,8 +25,23 @@ public class DataManager : MonoBehaviour
 
     public void LoadGame()
     {
-        data = new GameData(playerStartPositionSO); //luodaan olio, ajaa konstruktorin
+        // tarkistetaan, onko Datamanagerissa oleva save file  olemassa, ja jos on, ladataan se.
+        // Jos ei, luodaan uusi olio GameDatasta, jolloin haetaan oletusarvot SO:sta
 
+        // koitetaan ladata file:
+        Debug.Log("fileName=" + fileName);
+        data = FileManager.LoadFromFile(Application.dataPath + "/Saves", fileName);
+
+        if(data == null) //ei saatu jostain syyst‰ ladattua tiedostosta
+        {
+            Debug.Log("Tiedostoa ei ollut tai v‰‰r‰ formaatti. Luodaan alkupositiot");
+            
+            //EI TOIMINUT KAIKILLA, MIKSEI?
+            //data = new GameData(playerStartPositionSO); //luodaan olio, ajaa konstruktorin
+            
+            data = new GameData(); //luodaan olio, ajaa konstruktorin
+        }
+      
         //Kutsutaan LoadGameData jokaisessa skriptiss‰ jossa ISaveable
         foreach (var script in saveableObjects)
         {
@@ -42,6 +57,6 @@ public class DataManager : MonoBehaviour
                                     //positiot data-olioon
         }
         // Tallennetaan data-olio tiedostoon FileManagerilla
-        FileManager.Save(data,fileName);
+        FileManager.SaveToFile(data,fileName);
     }
 }
