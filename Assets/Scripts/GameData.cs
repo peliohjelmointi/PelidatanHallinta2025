@@ -17,6 +17,5 @@ public class GameData
         cubePosition = Vector3.zero;
     }
     
-
 }
 

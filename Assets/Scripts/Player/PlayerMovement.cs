@@ -45,8 +45,7 @@ namespace KS
         }
 
         public void LoadGameData(GameData data)
-        {
-            print("LoadGameData - player");
+        {       
             transform.position = data.playerPosition;
             transform.eulerAngles = data.playerRotation;
 
@@ -55,7 +54,8 @@ namespace KS
 
         public void SaveGameData(GameData data)
         {
-       
+            data.playerPosition = transform.position;
+            data.playerRotation = transform.eulerAngles;
         }
     }
 
