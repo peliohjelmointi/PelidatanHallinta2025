@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -7,17 +8,14 @@ public class GameData
     public Vector3 playerPosition;
     public Vector3 playerRotation;
 
-    //public GameData(PlayerPositionSO playerPositionSO)
-    //{
-    //    playerPosition = playerPositionSO.playerStartPosition;
-    //    playerRotation = playerPositionSO.playerRotation;
-    //} 
-    //CTRL+K+C = comment, CTRL+K+U = uncomment 
+    public Dictionary<string, bool> spheresCollected;
 
-    public GameData()
+    public GameData() //jos save filea ei ole, luodaan näiden arvojen mukaan
     {
-        playerPosition = new Vector3(0, 0, 0);
+        playerPosition = new Vector3(0, 1.274f, 0);
         playerRotation = new Vector3(0, 0, 0);
+
+        spheresCollected = new Dictionary<string, bool>();
     }
 
 }
