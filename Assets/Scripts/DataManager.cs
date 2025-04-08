@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DataManager : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class DataManager : MonoBehaviour
     [Header("Save/Load file name")]
     [SerializeField]
     string fileName;
+
+    public Button ScreenshotButton;
+
+    Sprite screenshot;
 
     private void Start()
     {       
@@ -58,5 +63,12 @@ public class DataManager : MonoBehaviour
         }
         // Tallennetaan data-olio tiedostoon FileManagerilla
         FileManager.SaveToFile(data,fileName);
+
+        //Mieti, mihin nämä kannattaa laittaa
+        screenshot = Resources.Load<Sprite>("Screenshot");
+        ScreenshotButton.GetComponent<Image>().sprite = screenshot;
+
+
+        print("Game Saved.");
     }
 }
