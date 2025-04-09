@@ -1,21 +1,21 @@
 {
   "playerPosition": {
-    "x": 1.04172111,
-    "y": 0.600005448,
-    "z": 4.892846,
+    "x": 0.9289815,
+    "y": 0.60000515,
+    "z": 3.64279,
     "normalized": {
-      "x": 0.206757739,
-      "y": 0.119087316,
-      "z": 0.9711177,
+      "x": 0.244021967,
+      "y": 0.157607481,
+      "z": 0.956876755,
       "magnitude": 1.0,
-      "sqrMagnitude": 1.00000012
+      "sqrMagnitude": 0.99999994
     },
-    "magnitude": 5.038366,
-    "sqrMagnitude": 25.3851318
+    "magnitude": 3.80695844,
+    "sqrMagnitude": 14.4929323
   },
   "playerRotation": {
     "x": 0.0,
-    "y": 52.99999,
+    "y": 78.10001,
     "z": 0.0,
     "normalized": {
       "x": 0.0,
@@ -24,8 +24,8 @@
       "magnitude": 1.0,
       "sqrMagnitude": 1.0
     },
-    "magnitude": 52.99999,
-    "sqrMagnitude": 2808.99878
+    "magnitude": 78.10001,
+    "sqrMagnitude": 6099.6123
   },
   "spheresCollected": {
     "720f76a1-1ebb-4204-a5ae-4c279f5f3398": true
