@@ -2,24 +2,22 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent (typeof(NavMeshAgent))]
-public abstract class BaseEnemy : MonoBehaviour
+public class BaseEnemy : MonoBehaviour
 {
-    protected GameObject player;
+    protected GameObject gameObjectToFollow;
     protected NavMeshAgent agent;
 
-    //[SerializeField]
-    //protected float agroRange = 5;
 
     protected virtual void Awake()
     {
         Debug.Log("BASE ENEMY AWAKE");
-        player = GameObject.FindGameObjectWithTag("Player");
+        gameObjectToFollow = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
-        if(Vector3.Distance(player.transform.position, gameObject.transform.position) < 5f)
+        if(Vector3.Distance(gameObjectToFollow.transform.position, gameObject.transform.position) < 5f)
         {
             Attack();
         }
