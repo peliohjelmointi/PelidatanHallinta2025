@@ -2,14 +2,16 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent (typeof(NavMeshAgent))]
-public class BaseEnemy : MonoBehaviour
+public abstract class BaseEnemy : MonoBehaviour
 {
     protected GameObject gameObjectToFollow;
     protected NavMeshAgent agent;
 
+    protected int x;
 
     protected virtual void Awake()
     {
+        
        // Debug.Log("BASE ENEMY AWAKE");
         gameObjectToFollow = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();

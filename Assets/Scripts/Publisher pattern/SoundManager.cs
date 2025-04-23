@@ -2,14 +2,15 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    int score;
     private void OnEnable()
     {
         GameEvents.OnCoinCollected += PlayCollectSound;
         GameEvents.OnGameOver += PlayGameOverTheme;
     }
 
-    void PlayCollectSound(int s)
+
+
+    public void PlayCollectSound(int s)
     {
         Debug.Log("DING!");
     }
@@ -19,3 +20,5 @@ public class SoundManager : MonoBehaviour
         Debug.Log("..playing game over theme music...");                    
     }
 }
+
+
