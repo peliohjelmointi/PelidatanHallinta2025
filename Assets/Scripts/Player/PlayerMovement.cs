@@ -13,6 +13,8 @@ namespace KS
         Rigidbody rb;
         CapsuleCollider capsuleCollider;
 
+        bool playerDead = false;
+
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
@@ -26,7 +28,16 @@ namespace KS
 
         private void Update()
         {
-            MovePlayer();
+            if (transform.position.y < 0 && !playerDead)
+            {
+                playerDead = true;
+                GameEvents.OnGameOver?.Invoke();                
+            }
+            
+            {
+                MovePlayer();
+            }
+            
         }
 
         private void FixedUpdate()

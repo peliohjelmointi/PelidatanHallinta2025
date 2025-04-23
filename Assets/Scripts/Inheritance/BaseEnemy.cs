@@ -10,7 +10,7 @@ public class BaseEnemy : MonoBehaviour
 
     protected virtual void Awake()
     {
-        Debug.Log("BASE ENEMY AWAKE");
+       // Debug.Log("BASE ENEMY AWAKE");
         gameObjectToFollow = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
     }
